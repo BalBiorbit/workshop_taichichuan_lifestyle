@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1º Workshop Grat Lifestyle Tai Chi Chuan Estilo Yang</title>
+    <meta name="description" content="Workshop Gratuito de Tai Chi Chuan Estilo Yang.">
+
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Variáveis de Design: Roxo, Amarelo e Preto --- */
+        :root {
+            --primary-color: #6A1B9A; /* Roxo Profundo */
+            --secondary-color: #FDD835; /* Amarelo Dourado */
+            --tertiary-color: #000000; /* Preto Puro */
+            
+            --bg-color: #ffffff; /* Branco para leitura */
+            --text-color: #333333;
+            --light-text: #ffffff;
+            --section-padding: 80px 20px;
+            --border-radius: 8px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* --- Reset Básico --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color); 
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius); box-shadow: var(--shadow); border: 2px solid var(--secondary-color); }
+
+        /* --- Utilitários --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            color: var(--primary-color);
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Header (Logo Centralizada, sem Menu) --- */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            z-index: 1000; 
+        }
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+        }
+        
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .logo span { color: var(--tertiary-color); } 
+
+        /* --- Hero Section --- */
+        #hero {
+            background-color: var(--primary-color); 
+            height: 90vh;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-align: center; 
+            color: var(--light-text);
+            padding-top: 60px;
+            background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 80% 80%, rgba(253, 216, 53, 0.15) 0%, transparent 20%);
+        }
+        
+        .hero-content { max-width: 900px; padding: 20px; animation: fadeIn 1.5s ease; }
+        .hero-content h1 { 
+            font-size: 2.8rem; 
+            color: var(--secondary-color); 
+            margin-bottom: 20px; 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+        }
+        .hero-content p { font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95; color: #fff; }
+        
+        .instructors-box {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--secondary-color); 
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+        }
+        .instructors-box p { margin: 5px 0; font-size: 1rem; font-weight: 500; color: var(--secondary-color); }
+
+        /* --- O Que É --- */
+        #oque-e { padding: var(--section-padding); background-color: #ffffff; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .text-block h3 { color: var(--primary-color); margin-top: 20px; border-bottom: 2px solid var(--secondary-color); display: inline-block; padding-bottom: 5px; }
+        
+        /* Estilo do Frame Roxo */
+        .purple-frame {
+            background-color: var(--primary-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            color: #fff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .purple-frame h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .benefit-list li span {
+            color: var(--secondary-color);
+            margin-right: 12px;
+            font-size: 1.3rem;
+            line-height: 1.2;
+            flex-shrink: 0; 
+        }
+        
+        /* --- Benefícios (Acordeão) --- */
+        #beneficios { padding: var(--section-padding); background-color: #f9f9f9; }
+        
+        details {
+            margin-bottom: 15px;
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border-left: 5px solid var(--primary-color); 
+            transition: var(--transition);
+        }
+        details:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+            border-left-color: var(--secondary-color);
+        }
+        
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            list-style: none; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            color: var(--tertiary-color);
+            transition: background 0.2s;
+        }
+        
+        summary::-webkit-details-marker { display: none; } 
+        
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--secondary-color); 
+            font-weight: 300;
+        }
+        
+        details[open] summary::after { content: '-'; }
+        details[open] summary { background-color: #f0f0f0; color: var(--primary-color); }
+
+        .benefit-content { padding: 0 20px 20px 20px; color: #444; font-size: 0.95rem; }
+        .benefit-content p { margin-bottom: 10px; }
+        .source-box {
+            background-color: #f9f9f9;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+            border-left: 3px solid var(--tertiary-color);
+        }
+        .source-box strong { display: block; margin-bottom: 5px; color: var(--primary-color); }
+
+        /* --- Quote Final --- */
+        #quote-final {
+            background-color: var(--primary-color); 
+            color: #ffffff; 
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .quote-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            max-width: 800px;
+            border: 1px solid var(--secondary-color); 
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--secondary-color); 
+            margin-bottom: 20px;
+        }
+        .quote-author {
+            font-size: 1rem;
+            color: #cccccc;
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* --- Footer --- */
+        footer { 
+            background-color: var(--primary-color); 
+            color: var(--secondary-color); 
+            padding: 40px 20px; 
+            text-align: center; 
+            font-size: 0.9rem; 
+        }
+        .footer-content p { margin-bottom: 10px; opacity: 0.9; }
+        .footer-content .logo { color: #fff; } 
+        .footer-content .logo span { color: var(--secondary-color); } 
+
+        /* --- Animações --- */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Mobile --- */
+        @media screen and (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+            .image-block { order: -1; } 
+            .section-title { font-size: 2rem; }
+            summary { padding: 15px; font-size: 1rem; }
+            .quote-card { padding: 20px; margin: 10px; }
+            .quote-text { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Apenas Logo Centralizada) -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Tai Chi Chuan <span>LifeStyle</span></div>
+                <ul class="nav-links" style="display:none;"></ul> 
+                <div class="hamburger" style="display:none;"></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>1º WORKSHOP GRATUITO LIFESTYLE DE TAI CHI CHUAN ESTILO YANG</h1>
+            <div class="instructors-box">
+                <p><strong>Ministrado pelo Professor:</strong> Bal</p>
+                <p><strong>Coordenação Geral:</strong> Professora Amanda - Academia LifeStyle</p>
+            </div>
+            <p>Convidamos você a conhecer o Tai Chi Chuan Estilo Yang, o estilo mais praticado no mundo. Ideal para quem quer começar a se aventurar pelo “Mundo do Tai Chi Chuan”.</p>
+        </div>
+    </section>
+
+    <!-- O Que É Section -->
+    <section id="oque-e">
+        <div class="container">
+            <div class="grid-2">
+                <div class="text-block">
+                    <h2>O Que É O Tai Chi Chuan?</h2>
+                    
+                    <h3>Ponto de Vista Histórico</h3>
+                    <p>O Tai Chi Chuan surgiu na China entre os séculos XVI e XVII, durante o final da dinastia Ming, a partir de antigos conhecimentos marciais, filosóficos e médicos chineses.</p>
+                    <p>Inicialmente desenvolvido como uma arte marcial interna, com o tempo passou a enfatizar também a saúde, a respiração e o equilíbrio do corpo e da mente. Hoje, o Tai Chi Chuan é praticado em todo o mundo tanto como uma arte tradicional chinesa quanto como uma prática reconhecida pelos seus benefícios físicos, mentais e energéticos.</p>
+
+                    <h3>Ponto de Vista Prático</h3>
+                    <p>Tai Chi Chuan é uma prática corporal que, por meio de movimentos suaves e contínuos com respiração adequada, melhora a circulação sanguínea, fortalece músculos e articulações, aumenta o equilíbrio e a coordenação e reduz o estresse físico e mental.</p>
+                    <p>A prática regular também melhora o foco e o poder de concentração para as tarefas do dia a dia, ajudando a organizar a mente, aumentar a clareza mental e romper estados de procrastinação.</p>
+                </div>
+                
+                <!-- Substituição da Imagem pelo Frame Roxo -->
+                <div class="image-block">
+                    <div class="purple-frame">
+                        <h3>Tai Chi Chuan.</h3>
+                        <ul class="benefit-list">
+                            <li><span>✔</span> Melhora o foco, a concentração e a memória</li>
+                            <li><span>✔</span> Reduz ansiedade, estresse e tensão mental</li>
+                            <li><span>✔</span> Aumenta equilíbrio, coordenação e consciência corporal</li>
+                            <li><span>✔</span> Ajuda a sair do ciclo da procrastinação</li>
+                            <li><span>✔</span> Promove bem-estar emocional e clareza nas decisões</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Benefícios Section (Accordion) -->
+    <section id="beneficios">
+        <div class="container">
+            <h2 class="section-title">Conheça os Benefícios</h2>
+            <p class="section-subtitle">Baseado em pesquisas e estudos científicos, veja como o Tai Chi pode transformar sua saúde.</p>
+
+            <!-- Equilíbrio -->
+            <details>
+                <summary>Equilíbrio</summary>
+                <div class="benefit-content">
+                    <p>Dos exercícios de equilíbrio o Tai Chi Chuan provou ser o de maior sucesso na redução de quedas. Além disso, as práticas, de acordo com estudos recentes, são benéficas para dar força, resistência muscular e flexibilidade.</p>
+                    <p>Para evitar os tombos, que se tornam mais frequentes à medida que a idade avança, uma sugestão é, praticar Tai Chi Chuan. De acordo com a equipe médica da Clínica Mayo (EUA), os movimentos lentos e suaves dessa atividade propiciam a restauração do senso de equilíbrio, que se torna menos eficiente com o passar dos anos, além de relaxar e tonificar os músculos.</p>
+                    <div class="source-box"><strong>Fonte:</strong> Colégio Médico da Universidade Cornell</div>
+                </div>
+            </details>
+
+            <!-- Sistema Cardiovascular -->
+            <details>
+                <summary>Sistema Cardiovascular e Pressão Sanguínea</summary>
+                <div class="benefit-content">
+                    <p>Uma sessão de Tai Chi Chuan pode beneficiar o coração tanto quanto uma boa caminhada. Foi comparada a pressão de pacientes com o hábito de caminhar toda manhã com a de cardíacos que passaram a praticar esta arte. Os dois times empataram em matéria de benefícios. Os movimentos lentos podem baixar a pressão arterial muito elevada até ela ficar normal.</p>
+                    <p>Pesquisa realizada por Cardiologistas - Universidade Johns Hopkins, nos Estados Unidos.</p>
+                    <p>Segundo um estudo feito em março de 1999 publicado no Periódico da Sociedade Americana de Geriatria, a prática do Tai Chi Chuan ajuda na redução da pressão alta. Foram analisados adultos mais velhos praticando Tai Chi Chuan durante 12 semanas, tendo reduções de pressão sanguínea muito significativas.</p>
+                    <p>Pesquisadores recrutaram 62 pessoas adultas sedentárias entre as idades de 60 e 80 anos. Elas tinham pressão sanguínea alta e tomavam medicamentos para regularizar. Os participantes foram divididos aleatoriamente dentro dois grupos: um que praticava Tai Chi Chuan com intensidade leve por 12 semanas e outro que praticava moderadamente exercícios aeróbicos. Os que praticaram Tai Chi Chuan e o grupo de exercícios aeróbicos tiveram reduções parecidas e significantes na pressão sanguínea. Foi concluído na pesquisa que a pratica regular do Tai Chi Chuan regulariza a pressão sanguínea.</p>
+                    <div class="source-box"><strong>Conduzindo o estudo esteve:</strong> Drª. Deborah Rohm, da Universidade John Hopkins.</div>
+                </div>
+            </details>
+
+            <!-- Postura -->
+            <details>
+                <summary>Postura</summary>
+                <div class="benefit-content">
+                    <p>Tai Chi Chuan, uma arte tradicional Chinesa, contém uma sequência de movimentos suaves e contínuos. Uma análise de variação demonstrou que de 3 em 5 pessoas testadas, teve significativa melhora na postura, em relação a pessoas sedentárias não praticantes.</p>
+                    <div class="source-box"><strong>Fonte:</strong> Periódico Americano de Terapia Ocupacional, 1992</div>
+                </div>
+            </details>
+
+            <!-- Fibromialgia -->
+            <details>
+                <summary>Fibromialgia</summary>
+                <div class="benefit-content">
+                    <p>Fibromialgia é uma epidemia moderna, uma condição crônica de dor que afeta 6 a 8 por cento da população dos Estados Unidos. O Tai Chi Chuan foi recomendado por alguns profissionais de saúde como uma terapia muito desejável para auxiliar no tratamento.</p>
+                    <p>No ano 2000, a Universidade de Maryland de Medicina, fez um estudo com pessoas que sofriam de fibromialgia, submetendo-as à sessões de um programa de Tai Chi Chuan. Uma melhora significativa foi percebida, melhorando o estado de saúde das pessoas envolvidas na pesquisa. A melhoria foi sustentada 4 meses após o fim da intervenção.</p>
+                </div>
+            </details>
+
+            <!-- Envelhecimento -->
+            <details>
+                <summary>Envelhecimento</summary>
+                <div class="benefit-content">
+                    <p>Uma pesquisa do Instituto de Shanghai de Hipertensão verificou diversos aspectos do envelhecimento. Analisando os benefícios da prática do Tai Chi Chuan, determinaram que é muito eficaz para auxiliar no tratamento de doenças geriátricas retardando o processo de envelhecimento do corpo.</p>
+                </div>
+            </details>
+
+            <!-- Doenças Respiratórias -->
+            <details>
+                <summary>Doenças Respiratórias</summary>
+                <div class="benefit-content">
+                    <p>Um estudo colaborativo entre o Instituto de Pesquisa de Medicina Tradicional Chinesa da Faculdade de Tainjin, e o Hospital de Cirurgia de Tórax de Tianjin, analisou pacientes que sofriam de bronquite crônica, de asma e de enfisema pulmonar.</p>
+                    <p>Um grupo praticou Tai Chi Chuan e Chi Kung e o outro grupo foi tratado apenas com remédios. O grupo que fez as práticas teve uma melhora mais rápida em relação ao outro grupo. Foi constatado que o Tai Chi Chuan ajuda muito na recuperação de pessoas que sofrem de doenças respiratórias.</p>
+                </div>
+            </details>
+
+            <!-- Dores nos Joelhos -->
+            <details>
+                <summary>Dores nos Joelhos</summary>
+                <div class="benefit-content">
+                    <p>Os problemas de dores nos joelhos são comuns porque nós envelhecemos. A Universidade de Illinois conduziu um estudo em idosos usando 20 semanas de treinamento com Tai Chi Chuan. Os resultados finais comprovaram que a prática do Tai Chi Chuan melhora a força do extensor do joelho e o controle da força nos idosos.</p>
+                </div>
+            </details>
+
+            <!-- Insônia -->
+            <details>
+                <summary>Insônia</summary>
+                <div class="benefit-content">
+                    <p>A insônia é um problema crescente em nosso mundo agitado, onde muitas pessoas vivem estressadas. No departamento de Chi Kung do Hospital de Ningbo de Medicina Tradicional Chinesa, na China, fizeram em 78 pacientes que sofriam de insônia tratamentos que envolviam Meditação e Tai Chi Chuan, complementando com acupressura em diversos pontos.</p>
+                    <p>Após algumas semanas de tratamento, 35 pessoas foram curadas (o sono melhorou passando a 7 horas por dia), 22 casos tiveram um bom resultado (dormiam de 4 a 6 horas por dia), 9 casos mostraram algum efeito (o sono ficou melhor do que era), 2 casos não mostraram nenhum efeito. Foi comprovado que a grande maioria das pessoas melhorou muito sem a necessidade de usar remédios e drogas.</p>
+                </div>
+            </details>
+
+            <!-- Pessoas Idosas -->
+            <details>
+                <summary>Pessoas Idosas</summary>
+                <div class="benefit-content">
+                    <p>Um treinamento de 12 meses de Tai Chi Chuan em pessoas idosas, provou que tanto para homens como para mulheres houve um aumento do consumo de oxigênio, aumento da flexibilidade da coluna lombar/toráxica, aumento da força muscular das pernas, e contribuiu para a redução da tensão, da depressão, da ansiedade e dos distúrbios de humor.</p>
+                    <div class="source-box"><strong>Fonte:</strong> Depto de Medicina Física e Reabilitação - Universidade Nacional de Taiwan - China</div>
+                </div>
+            </details>
+
+            <!-- No Trabalho -->
+            <details>
+                <summary>No Trabalho</summary>
+                <div class="benefit-content">
+                    <p>Uma pesquisa entre os praticantes de Tai Chi Chuan, comprovou que 90% sentiu melhoras significativas no seu desempenho profissional, estado de atenção e concentração no trabalho e especialmente na qualidade de sua saúde física e emocional.</p>
+                    <p>No campo das relações humanas, o trato com colegas e superiores chegou a um nível de entendimento que possibilita a maior compreensão e integração no trabalho. O que mais chama atenção na pesquisa é o nível da capacidade de encarar problemas tanto profissionais como particulares, com "calma", encontrando soluções adequadas aos mesmos, sem desgaste físico ou emocional.</p>
+                </div>
+            </details>
+
+            <!-- Benefícios Gerais -->
+            <details>
+                <summary>Benefícios Gerais</summary>
+                <div class="benefit-content">
+                    <p>A prática do Tai Chi Chuan gera um sentimento de paz interior, na medida em que nos concentramos nos movimentos sem nos distrairmos. Os movimentos suaves e fluídos, fazem com que a mente e os músculos relaxem, promovendo a flexibilidade.</p>
+                    <div class="source-box"><strong>Fonte:</strong> Pesquisa médica publicada em 1986 no "China Sports"</div>
+                    <p>De acordo com estudos recentes realizados por Médicos americanos, de todas as artes terapêuticas, físicas e mentais, o Tai Chi Chuan é o mais suave e o mais fácil de ser aprendido. Seu poder de rejuvenescimento tanto físico como mental, tem sido comprovado pois, abaixa a pressão sanguínea, irriga as juntas, estimula a circulação, constrói os músculos e mobiliza o sistema imunológico. Tudo isso sem stress ou tensão.</p>
+                    <div class="source-box"><strong>Fonte:</strong> Revista Americana de Saúde dos Homens - Março/abril 1993</div>
+                    <p>Pesquisas mostraram que o Tai Chi Chuan pode também: curar doenças como hipertensão, asma, enxaqueca e insônia; prevenir arteriosclerose e deformidades e dores na coluna; encurtar a fase de recuperação de algumas doenças.</p>
+                    <div class="source-box"><strong>Fonte:</strong> Periódico Americano de Medicina Chinesa - 1981 Vol. 9(1) 15-22</div>
+                </div>
+            </details>
+
+            <!-- Estudos com Jovens -->
+            <details>
+                <summary>Estudos com Jovens/Adultos Jovens</summary>
+                <div class="benefit-content">
+                    <p><strong>Efeitos físicos e cerebrais em universitários:</strong> Um estudo clínico controlado mostrou que praticar Tai Chi 3× por semana por 12 semanas pode melhorar o desempenho físico (como salto em distância) e aumentar a atividade alfa no cérebro, um sinal associado a relaxamento mental e foco, em estudantes universitários — ou seja, jovens adultos.</p>
+                    <p>Revisão de literatura em estudantes entre 18 e 30 anos também encontrou evidências de que práticas como Tai Chi podem ter impacto positivo na qualidade de vida e cognição dessa faixa etária.</p>
+                    <div class="source-box"><strong>O que isso sugere:</strong> Tai Chi pode oferecer benefícios físicos e mentais também para jovens, incluindo maior aptidão física, mudanças em padrões cerebrais relacionados a atenção e relaxamento, e melhorias potenciais em foco e bem-estar.</div>
+                    <p>Treze adolescentes com Distúrbio de Hiperatividade e Deficiência de Atenção participaram de aulas de Tai Chi Chuan duas vezes por semana, durante 5 semanas. Os professores avaliaram os comportamentos dos adolescentes na Scala Conners. Após as 10 sessões de Tai Chi os adolescentes demonstraram menos ansiedade, um maior equilíbrio emocional e uma melhora no comportamento.</p>
+                </div>
+            </details>
+
+            <!-- Fonte de Juventude -->
+            <details>
+                <summary>Fonte de Juventude</summary>
+                <div class="benefit-content">
+                    <p>O Cardiologista Jairo Mancilla e o psiquiatra Luiz Alberto Py de São Paulo, acreditam que a longevidade e a felicidade andam de mãos dadas. Para comprovar sua tese, entrevistaram várias pessoas com mais de 90 anos e muita saúde e observaram algumas características em comum.</p>
+                    <p>Todos sabiam viver em paz no presente, perdoar e liberar emoções de maneira adequada. Também eram pessoas de fé: mesmo com religiões diferentes mantinham práticas espirituais que lhe davam força e motivação para a vida. Os médicos recomendam para quem deseja trilhar esse caminho de bem estar, que comece a fazer regularmente (de preferência, diariamente), algo que ajude a reequilibrar a mente e o organismo, como caminhadas ou exercícios de TAI CHI CHUAN.</p>
+                    <div class="source-box"><strong>Publicado na Revista:</strong> "Criativa" – Outubro/2001</div>
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- Quote Final -->
+    <section id="quote-final">
+        <div class="quote-card">
+            <p class="quote-text">“Tai Chi Chuan — intenção clara (Yi), energia viva (Qi) e força refinada (Jin)”</p>
+            <p class="quote-author">Significado: Foco mental, respiração equilibrada e movimentos bem alinhados trabalham juntos para gerar estabilidade, potência e bem-estar.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">Tai Chi Chuan <span>LifeStyle</span></div>
+            <p>Ministrante: Professor Bal | Coordenação: Professora Amanda</p>
+            <p>&copy; 2026 Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
